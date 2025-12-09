@@ -1,11 +1,10 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import Feature1 from "./Feature1";
 
 export default function Home( {changedInput} ) {
   const navigate1 = useNavigate();
   const navigate2 = useNavigate();
-  const inputValue = changedInput
+  const inputValue = changedInput;
 
   return (
     <div>

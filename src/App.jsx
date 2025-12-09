@@ -7,18 +7,26 @@ import Feature2 from './Practice/feature2';
 
 function App() {
   const navigate = useNavigate();
-  const [changedInput, setChangedInput] = useState('Manvitha'); 
-  const inputChange = (inputValue)=> {
+  const [changedInput, setChangedInput] = useState('Manvitha');
+  const inputChange= (inputValue) => {
     setChangedInput(inputValue);
-    navigate('/') 
+    navigate('/')
+  }
+
+  const genderInput = ()=> {
+
+  }
+
+  const countryInput = ()=>{
+
   }
 
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home changedInput = {changedInput}/>} />
-        <Route path='/manvi' element={<Feature1 inputChange = {inputChange} changedInput = {changedInput}/>}/>
-        <Route path='/srr' element={<Feature2/>}/>
+        <Route path='/' element={<Home changedInput={changedInput} />} />
+        <Route path='/manvi' element={<Feature1 inputChange={inputChange} changedInput={changedInput} />} />
+        <Route path='/srr' element={<Feature2 />} />
       </Routes>
     </>
   )
