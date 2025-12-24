@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 
 export default function Home( {changedInput, gender, country} ) {
   const navigate1 = useNavigate();
   const navigate2 = useNavigate();
   const inputValue1 = changedInput;
+  const [abcValue, setAbcValue] = useState('')
+
+  useEffect(() => {
+    setAbcValue(`${gender} ${country}`)
+  },[gender, country])
+  
+  // useEffect(() => {
+  //   setAbcValue("SRR")
+  // },[])     
   
   return (
     <div>
@@ -18,7 +28,7 @@ export default function Home( {changedInput, gender, country} ) {
         <button
         onClick={()=> navigate2("/srr")}
         className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 m-3 rounded-lg shadow"
-        >Go to {gender} {country}</button>
+        >Go to {abcValue}</button>
       </div>
     </div>
   )

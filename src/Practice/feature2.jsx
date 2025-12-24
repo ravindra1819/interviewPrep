@@ -10,12 +10,12 @@ export default function Feature2({ gender, country, setGender, setCountry , valu
     <>
       <div className="m-4">
         <label >Gender : </label> <br />
-          <input type="radio" name="gender" value="male" className="m-1" 
-          checked={gender === "male"}
+          <input type="radio" name="gender" value="Male" className="m-1" 
+          checked={gender === "Male"}
           onChange={(e) => setGender(e.target.value)}
           /> Male
-          <input type="radio" name="gender" value="female" className="m-1" 
-          checked={gender === "female"}
+          <input type="radio" name="gender" value="Female" className="m-1" 
+          checked={gender === "Female"}
           onChange={(e) => setGender(e.target.value)}
           /> Female
           <input type="radio" name="gender" value="others" className="m-1" 

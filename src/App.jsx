@@ -20,15 +20,15 @@ function App() {
     setChangeGenderCountry(inputValue1)
     navigate('/')
   }
-  const [gender, setGender] = useState(() => localStorage.getItem("gender") || "");
-  const [country, setCountry] = useState(() => localStorage.getItem("country") || "");
+  const [gender, setGender] = useState(() => sessionStorage.getItem("gender") || "");
+  const [country, setCountry] = useState(() => sessionStorage.getItem("country") || "");
 
   useEffect(() => {
-    localStorage.setItem("gender", gender)
+    sessionStorage.setItem("gender", gender)
   }, [gender]);
 
   useEffect(() => {
-    localStorage.setItem("country", country)
+    sessionStorage.setItem("country", country)
   }, [country]);
 
 
