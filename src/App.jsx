@@ -42,7 +42,8 @@ function App() {
           country={country} />} />
         
         <Route path='/manvi' element={<Feature1 inputChange={inputChange} changedInput={changedInput} />} />
-        
+
+
         <Route path='/srr'
           element={<Feature2
             valuechange={valuechange}
