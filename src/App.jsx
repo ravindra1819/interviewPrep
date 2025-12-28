@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './Practice/home';
 import Feature1 from './Practice/Feature1';
 import Feature2 from './Practice/feature2';
+import TProducts from './ThunkPractice/TProducts';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
             setCountry={setCountry}
           />} />
       </Routes>
+      <TProducts />
     </>
   )
 }

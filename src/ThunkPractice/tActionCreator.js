@@ -1,20 +1,27 @@
-export const fecthUsers = () => {
+export const fetchUsers = (page = 1, limit = 5) => {
   return async (dispatch) => {
-    dispatch({ type: "Fetch_Users_Request" });
+    dispatch({ type: "FETCH_PRODUCTS_REQUEST" });
 
     try {
-      const response = await fetch("https://dummyjson.com/carts");
+      const skip = (page - 1) * limit;
+      const response = await fetch(
+        `https://dummyjson.com/carts?limit=${limit}&skip=${skip}`
+      );
       const data = await response.json();
 
       dispatch({
-        type: "Fetch_Users_Success",
-        payload: data
+        type: "FETCH_PRODUCTS_SUCCESS",
+        payload: {
+          carts: data.carts,
+          total: data.total,
+          limit
+        }
       });
-    } catch(error){
+    } catch (error) {
       dispatch({
-        type: "Fetch_Users_Failure",
+        type: "FETCH_PRODUCTS_FAILURE",
         payload: error.message
       });
     }
-  }
-}
+  };
+};

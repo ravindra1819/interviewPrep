@@ -1,29 +1,29 @@
 const initialState = {
-  loading : false,
+  loading: false,
   products: [],
-  error: ""
+  error: null,
+  total: 0,
+  limit: 5
 };
 
 export const userReducer = (state = initialState, action) => {
-  switch(action.type) {
-    case "Fetch_Users_Request":
-      return{
+  switch (action.type) {
+    case "FETCH_PRODUCTS_REQUEST":
+      return { ...state, loading: true };
+
+    case "FETCH_PRODUCTS_SUCCESS":
+      return {
         ...state,
-        loading : true};
-     
-    case "Fetch_Users_Success":
-      return{
         loading: false,
-        products: action.payload,
-        error: ""};
-    
-    case "Fetch_Users_Failure":
-      return{
-        loading: false,
-        products: [],
-        error: action.payload};
-    
+        products: action.payload.carts,
+        total: action.payload.total,
+        limit: action.payload.limit
+      };
+
+    case "FETCH_PRODUCTS_FAILURE":
+      return { ...state, loading: false, error: action.payload };
+
     default:
       return state;
   }
-}
+};
