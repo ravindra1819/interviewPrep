@@ -10,14 +10,17 @@ function App() {
   const navigate = useNavigate();
 
   const [changedInput, setChangedInput] = useState('Manvitha');
+  const [changedFrom , setChangedFrom] = useState('')
   const inputChange = (inputValue) => {
     setChangedInput(inputValue);
+    setChangedFrom('feature1')
     navigate('/')
   }
 
   const [changeGenderCountry, setChangeGenderCountry] = useState("");
   const valuechange = (inputValue1)=>{
     setChangeGenderCountry(inputValue1)
+    setChangedFrom('feature2')
     navigate('/')
   }
   const [gender, setGender] = useState(() => sessionStorage.getItem("gender") || "");
@@ -39,7 +42,8 @@ function App() {
         <Route path='/' element={<Home
           changedInput={changedInput}
           gender={gender}
-          country={country} />} />
+          country={country} 
+          changedFrom={changedFrom}/>} />
         
         <Route path='/manvi' element={<Feature1 inputChange={inputChange} changedInput={changedInput} />} />
 
