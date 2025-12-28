@@ -4,13 +4,12 @@ import Home from './Practice/home';
 import Feature1 from './Practice/Feature1';
 import Feature2 from './Practice/feature2';
 
-
 function App() {
 
   const navigate = useNavigate();
 
   const [changedInput, setChangedInput] = useState('Manvitha');
-  const [changedFrom , setChangedFrom] = useState('')
+  const [changedFrom, setChangedFrom] = useState('')
   const inputChange = (inputValue) => {
     setChangedInput(inputValue);
     setChangedFrom('feature1')
@@ -18,7 +17,7 @@ function App() {
   }
 
   const [changeGenderCountry, setChangeGenderCountry] = useState("");
-  const valuechange = (inputValue1)=>{
+  const valuechange = (inputValue1) => {
     setChangeGenderCountry(inputValue1)
     setChangedFrom('feature2')
     navigate('/')
@@ -34,19 +33,18 @@ function App() {
     sessionStorage.setItem("country", country)
   }, [country]);
 
-
-
   return (
     <>
       <Routes>
         <Route path='/' element={<Home
           changedInput={changedInput}
           gender={gender}
-          country={country} 
-          changedFrom={changedFrom}/>} />
-        
-        <Route path='/manvi' element={<Feature1 inputChange={inputChange} changedInput={changedInput} />} />
+          country={country}
+          changedFrom={changedFrom} />} />
 
+        <Route path='/manvi'
+          element={<Feature1 inputChange={inputChange}
+            changedInput={changedInput} />} />
 
         <Route path='/srr'
           element={<Feature2
