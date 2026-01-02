@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import ProductList from './Performance testing/InfiniteVirtual';
 import Home from './Practice/home';
 import Feature1 from './Practice/Feature1';
 import Feature2 from './Practice/feature2';
@@ -56,7 +57,8 @@ function App() {
             setCountry={setCountry}
           />} />
       </Routes>
-      <TProducts />
+      <TProducts /> 
+      <ProductList />
     </>
   )
 }

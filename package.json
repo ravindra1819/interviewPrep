@@ -16,6 +16,8 @@
     "react-dom": "^19.2.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.10.1",
+    "react-window": "^2.2.3",
+    "react-window-infinite-loader": "^2.0.0",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
     "tailwindcss": "^4.1.17"
