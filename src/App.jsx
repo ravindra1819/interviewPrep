@@ -1,10 +1,10 @@
-import Parent from './CallBackMemo';
+import EmployeeComponent from "./Pagination/EmployeList";
 
 function App() {
 
   return (
     <>
-      <Parent />
+      <EmployeeComponent />
     </>
   )
 }
