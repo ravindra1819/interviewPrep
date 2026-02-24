@@ -5,7 +5,7 @@ import { useDebounce } from "./debounce";
 export default function EmployeeComponent() {
   const { users, loading, error } = useEmployee();
   const [search, setSearch] = useState("");
-  const debouncedSearch = useDebounce(search, 300);
+  const debouncedSearch = useDebounce(search, 500);
 
   const filtererdUsers = useMemo(() => {
     return users.filter((user) => 
